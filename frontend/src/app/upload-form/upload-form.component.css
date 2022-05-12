@@ -1,0 +1,15 @@
+.main-form {
+    margin-top: 3em;
+    border: 1px solid lightgray;
+    border-radius: 1%;
+    background-color: #f4f4f4;
+}
+
+.form-group {
+    margin-bottom: 0.5em;
+}
+
+.material-icons { 
+    vertical-align: middle;
+}
+

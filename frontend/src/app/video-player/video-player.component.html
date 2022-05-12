@@ -1,0 +1,32 @@
+<div class="vid-player container p-0" *ngIf="oid_orig != ''">
+    <div >
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span ml-2>Video Player</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [disabled]="isGrayscale" (click)="convertGray(tg)">
+                    Convert2Gray
+                  <mat-icon class="material-icons">swap_horizontal_circle</mat-icon>
+                </button>
+              </mat-toolbar-row>
+         </mat-toolbar>
+    <div>
+        <mat-tab-group #tg>
+            <mat-tab label="Original">
+                <vg-player>
+                    <video class="v-player" autoplay #media id="singleVideo" preload="auto" controls>
+                        <source [src]="src" type="video/mp4">
+                    </video>
+                </vg-player>
+            </mat-tab>
+            <mat-tab label="Grayscale" *ngIf="isGrayscale">
+
+                <vg-player>
+                    <video class="v-player" autoplay #media id="singleVideo" preload="auto" controls>
+                        <source [src]="gscale_src" type="video/webm">
+                    </video>
+                </vg-player>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

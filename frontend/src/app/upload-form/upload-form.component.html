@@ -1,0 +1,33 @@
+<div class="container main-form p-0">
+    <form [formGroup]="uploadForm" class="container p-3" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+            <h1 class="col ml-auto text-center font-weight-bold">Video Uploader <mat-icon class="material-icons">
+                    videocam</mat-icon>
+            </h1>
+        </div>
+        <div class="form-group row">
+            <label for="ipFile" class="req col-sm-3 offset-sm-1 pt-2 col-lg-2 pt-2">Upload File</label>
+            <div class="col-sm-7 col-lg-6 mr-auto pt-1">
+                <input type="file" id="ipFile" formControlName="fileControl" (change)="onFileChange($event)">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8 offset-sm-1 col-lg-8 pt-2">
+                <div class="row no-gutters">
+                    <div class="col-4 col-md-3 col-lg-2 pt-2">
+                        <button type="submit" class="btn btn-primary" >
+                            <mat-icon class="material-icons">file_upload</mat-icon>Upload
+                        </button>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-3 col-lg-2 pt-2">
+                        <button type="button" class="btn btn-outline-dark" (click)="clearForm()">
+                            <mat-icon class="material-icons">clear_all</mat-icon>Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<app-video-player [oid_orig]="oid_orig" [rst]="rst"></app-video-player>
